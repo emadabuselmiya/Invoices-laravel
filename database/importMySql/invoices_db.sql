@@ -1,11 +1,14 @@
+create Database invoices_db;
+use invoices_db;
+
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2021 at 05:22 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Generation Time: Sep 11, 2021 at 01:39 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +21,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `invoices`
+-- Database: `invoices_db`
 --
 
 -- --------------------------------------------------------
@@ -101,12 +104,12 @@ CREATE TABLE `invoices_details` (
 --
 
 INSERT INTO `invoices_details` (`id`, `id_Invoice`, `invoice_number`, `product`, `Section`, `Status`, `Value_Status`, `Payment_Date`, `note`, `user`, `created_at`, `updated_at`) VALUES
-(14, 11, '0597101386', 'الحاسبة', '2', 'غير مدفوعة', 2, NULL, NULL, 'ahmad', '2021-04-26 12:27:20', '2021-04-26 12:27:20'),
-(15, 12, '65995969', 'البطاقات', '1', 'غير مدفوعة', 2, NULL, NULL, 'ahmad', '2021-04-26 12:50:35', '2021-04-26 12:50:35'),
-(16, 13, '8815651', 'الحاسبة', '2', 'غير مدفوعة', 2, NULL, NULL, 'ahmad', '2021-04-26 12:52:11', '2021-04-26 12:52:11'),
-(17, 14, '7888587', 'البطاقات', '1', 'غير مدفوعة', 2, NULL, NULL, 'ahmad', '2021-04-26 12:59:20', '2021-04-26 12:59:20'),
-(18, 11, '0597101386', 'الحاسبة', '2', 'مدفوعة', 1, '2021-04-30', NULL, 'ahmadjoda', '2021-04-26 13:05:04', '2021-04-26 13:05:04'),
-(19, 15, 'fgdsgfds', 'البطاقات', '1', 'غير مدفوعة', 2, NULL, NULL, 'ahmadjoda', '2021-04-26 16:30:30', '2021-04-26 16:30:30');
+(14, 11, '0597101386', 'الحاسبة', '2', 'غير مدفوعة', 2, NULL, NULL, 'Emad', '2021-04-26 12:27:20', '2021-04-26 12:27:20'),
+(15, 12, '65995969', 'البطاقات', '1', 'غير مدفوعة', 2, NULL, NULL, 'Emad', '2021-04-26 12:50:35', '2021-04-26 12:50:35'),
+(16, 13, '8815651', 'الحاسبة', '2', 'غير مدفوعة', 2, NULL, NULL, 'Emad', '2021-04-26 12:52:11', '2021-04-26 12:52:11'),
+(17, 14, '7888587', 'البطاقات', '1', 'غير مدفوعة', 2, NULL, NULL, 'Emad', '2021-04-26 12:59:20', '2021-04-26 12:59:20'),
+(18, 11, '0597101386', 'الحاسبة', '2', 'مدفوعة', 1, '2021-04-30', NULL, 'Emad Abuselmiya', '2021-04-26 13:05:04', '2021-04-26 13:05:04'),
+(19, 15, 'fgdsgfds', 'البطاقات', '1', 'غير مدفوعة', 2, NULL, NULL, 'Emad Abuselmiya', '2021-04-26 16:30:30', '2021-04-26 16:30:30');
 
 -- --------------------------------------------------------
 
@@ -129,7 +132,7 @@ CREATE TABLE `invoice_attachments` (
 --
 
 INSERT INTO `invoice_attachments` (`id`, `file_name`, `invoice_number`, `Created_by`, `invoice_id`, `created_at`, `updated_at`) VALUES
-(6, 'تحليل مشروع تكنولوجيا الإدارة.pdf', 'fgdsgfds', 'ahmadjoda', 15, '2021-04-26 16:30:30', '2021-04-26 16:30:30');
+(6, 'تحليل مشروع تكنولوجيا الإدارة.pdf', 'fgdsgfds', 'Emad Abuselmiya', 15, '2021-04-26 16:30:30', '2021-04-26 16:30:30');
 
 -- --------------------------------------------------------
 
@@ -450,8 +453,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `roles_name`, `Status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'ahmadjoda', 'joda.ahmad.96@gmail.com', NULL, '$2y$10$wyTpvdnODkKCYUn5LBQ1FekdkFKJmUoKQfxZN5QOglxzCWsETay.C', '[\"owner\"]', 'مفعل', NULL, '2021-04-25 09:46:42', '2021-04-25 09:46:42'),
-(2, 'ahmad', 'joda.ahmad@gmail.com', NULL, '$2y$10$.yRvHl4WadWsMZ7EHMI04.MGiuW6vway7Yn0rWxBAlTXK9ZHt4fWO', '[\"user\"]', 'مفعل', NULL, '2021-04-25 10:35:47', '2021-04-25 15:23:27');
+(1, 'Emad Abuselmiya', 'emadabuselmiya@gmail.com', NULL, '$2y$10$0dMHN.b5ge23yn.n4OROLu3tZDo36ZYdS2TYUEC78U.q4DOEmBlSW', '[\"owner\"]', 'مفعل', 'JanSrtNqMtJ8FzqTkTJ7L022d36JwjAR3svEkdu0C4KndVYmiLQtXuw3D9MM', '2021-04-25 09:46:42', '2021-09-11 08:34:50'),
+(2, 'Emad', 'emad@gmail.com', NULL, '$2y$10$LwfcF1T7OLLVzhrk1BK3mOYwYA9wqZQfrf1C1yu3pCGL8o4LQq7Yy', '[\"user\"]', 'مفعل', NULL, '2021-04-25 10:35:47', '2021-09-11 08:35:05');
 
 --
 -- Indexes for dumped tables
